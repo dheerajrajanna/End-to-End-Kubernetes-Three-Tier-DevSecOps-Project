@@ -1,7 +1,7 @@
 resource "aws_instance" "ec2" {
   ami                    = data.aws_ami.ami.image_id
-  instance_type          = "c7i-flex.large"
-  key_name               = var.key-name
+  instance_type          = "t3.small"
+  key_name               = "1990accountkeypair"
   subnet_id              = aws_subnet.public-subnet.id
   vpc_security_group_ids = [aws_security_group.security-group.id]
   iam_instance_profile   = aws_iam_instance_profile.instance-profile.name
